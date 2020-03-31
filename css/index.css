@@ -1,0 +1,16 @@
+
+body {
+ padding-top: 32px !important;
+}
+
+.dataTables_length{
+  width: auto;
+}
+
+.dataTable{
+  width: 100%;
+}
+
+.number {
+  text-align: right;
+}
