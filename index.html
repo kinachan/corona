@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./css/index.css">
+  <title>コロナウイルス状況</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <h3>コロナウイルス発生状況</h3>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <table id="corona" class="table table-hover dataTable" style="width:100%">
+          <thead class="table-info">
+            <tr>
+              <th>country</th>
+              <th>cases</th>
+              <th>todayCases</th>
+              <th>deaths</th>
+              <th>todayDeaths</th>
+              <th>recovered</th>
+              <th>active</th>
+              <th>critical</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
