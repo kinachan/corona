@@ -37,20 +37,21 @@ $(document).ready(function () {
 
   // datatableの設定を変更
   $('#corona').DataTable({
+    scrollX: true,
     render: $.fn.dataTable.render.number( ',', '.', 2, '' ),
     language: defaultLaungage,
     ajax: 'https://corona-stats.online/?format=json',
     columns: [
       // 英語検索用のデータ
-      { data: 'country', title: '', width: 20},
-      { data: 'country', title: '国', width: 30, render:(data,type,row) => {
+      { data: 'country', title: '', width: '2%', className: 'flag', autoWidth: false},
+      { data: 'country', title: '国', width: '30%', render:(data,type,row) => {
         const iso2 = row["countryInfo"].iso2;
         const iso = isoList.find(x =>x.alpha2 === iso2);
 
         if (iso == null) return data;
         return iso.companyjp || data;
       } },
-      { data: 'cases', title: '感染者', width: 40, className: 'number', render: withComma() },
+      { data: 'cases', title: '感染者', width: 35, className: 'number', render: withComma() },
       { data: 'deaths', title: '死亡', width: 30, className: 'number', render: withComma() },
       { data: 'recovered', title: '回復者', width: 32, className: 'number', render: withComma() },
       { data: 'active', title: '感染中', width: 32, className: 'number', render: withComma() },

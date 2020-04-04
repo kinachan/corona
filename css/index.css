@@ -17,5 +17,8 @@ body {
 
 td.rate::after{
   content: '%';
-  /* color: red !important; */
+}
+
+td.flag {
+  max-width: 10px;
 }
