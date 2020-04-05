@@ -1,31 +1,7 @@
-const defaultLaungage = {
-  sProcessing: "処理中...",
-  sLengthMenu: "_MENU_ 件表示",
-  sZeroRecords: "データはありません。",
-  sInfo: " _TOTAL_ 件中 _START_ から _END_ まで表示",
-  sInfoEmpty: " 0 件中 0 から 0 まで表示",
-  sInfoFiltered: "（全 _MAX_ 件より抽出）",
-  sInfoPostFix: "",
-  sSearch: "検索:",
-  sUrl: "",
-  oPaginate: {
-    sFirst: "先頭",
-    sPrevious: "前",
-    sNext: "次",
-    sLast: "最終"
-  },
-  decimal:",",
-  thousands: ".",
-};
-
 let isoList = null;
 
 function periodRound(value, base) {
   return Math.round(value * base) / base;
-}
-
-function withComma() {
-  return $.fn.dataTable.render.number(',',',');
 }
 
 $(document).ready(function () {
@@ -36,10 +12,7 @@ $(document).ready(function () {
   }
 
   // datatableの設定を変更
-  $('#corona').DataTable({
-    scrollX: true,
-    render: $.fn.dataTable.render.number( ',', '.', 2, '' ),
-    language: defaultLaungage,
+  createDataTable('#corona', {
     ajax: 'https://corona-stats.online/?format=json',
     columns: [
       // 英語検索用のデータ
@@ -70,7 +43,6 @@ $(document).ready(function () {
       },
     ],
     order: [[2, 'desc']],
-    lengthMenu:[[50,10, 100,-1], [50,10, 100, '全']],
     rowCallback: function (row, data) {
       const flag = $('td', row).eq(0)[0];
 
