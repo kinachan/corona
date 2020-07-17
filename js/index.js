@@ -24,7 +24,8 @@ $(document).ready(function () {
         if (iso == null) return data;
         return iso.companyjp || data;
       } },
-      { data: 'cases', title: '感染者', width: 35, className: 'number', render: withComma() },
+      { data: 'todayCases', title: '新規', width: 40, className: 'number', render: withComma()},
+      { data: 'cases', title: '総感染者', width: 35, className: 'number', render: withComma() },
       { data: 'deaths', title: '死亡', width: 30, className: 'number', render: withComma() },
       { data: 'recovered', title: '回復者', width: 32, className: 'number', render: withComma() },
       { data: 'active', title: '感染中', width: 32, className: 'number', render: withComma() },
